@@ -404,11 +404,15 @@ def turkce_tarih(d: date) -> str:
 st.markdown('<h1 class="main-title">📊 Fon Hesaplama Aracı</h1>', unsafe_allow_html=True)
 
 
-# Hedef tarih bilgisi
+# Hedef tarih bilgisi ve Uyarılar
 st.markdown(
     f'<div style="text-align:center; color:#667eea; font-size:0.9rem; '
-    f'margin-bottom:1.5rem; font-weight:600;">'
-    f'🗓️ Ekim Üfe ve Tüfe Belli Olmadığından Hesaplama 30 Eylül 2026\'ya kadar yapılmaktadır.</div>',
+    f'margin-bottom:0.5rem; font-weight:600;">'
+    f'🗓️ Ekim Üfe ve Tüfe Belli Olmadığından Hesaplama 30 Eylül 2026\'ya kadar yapılmaktadır.</div>'
+    f'<div style="text-align:center; color:#ff6a88; font-size:0.85rem; font-weight:700; '
+    f'margin-bottom:1.5rem; padding:0.8rem; border:1px solid rgba(255,106,136,0.3); '
+    f'border-radius:8px; background:rgba(255,106,136,0.1);">'
+    f'⚠️ DİKKAT BU PROGRAM SADECE TAHMİN BİLGİLERİ İÇERİR RESMİ BİR RAKAM VERMEZ HESAPLAR HATALI OLABİLİR. SADECE ÖN TAHMİN İÇİN OLUŞTURULMUŞTUR.</div>',
     unsafe_allow_html=True,
 )
 
