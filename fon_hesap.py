@@ -268,36 +268,7 @@ HEDEF_TARIH = date(2026, 9, 30)
 EN_ERKEN_TARIH = date(2025, 1, 1)
 EN_GEC_TARIH = date(2026, 9, 30)
 
-import streamlit.components.v1 as components
-components.html("""
-<script>
-const doc = window.parent.document;
-function bindInputs() {
-    const inputs = doc.querySelectorAll('input[type="text"]');
-    inputs.forEach(input => {
-        if(input.placeholder && input.placeholder.includes('1.250.000')) {
-            if(!input.dataset.bound) {
-                input.dataset.bound = 'true';
-                input.addEventListener('input', function(e) {
-                    let val = this.value.replace(/[^0-9,]/g, '');
-                    let parts = val.split(',');
-                    let intPart = parts[0].replace(/\\B(?=(\\d{3})+(?!\\d))/g, '.');
-                    this.value = parts.length > 1 ? intPart + ',' + parts[1].substring(0,2) : intPart;
-                    
-                    let event = new Event('input', { bubbles: true });
-                    let tracker = this._valueTracker;
-                    if (tracker) { tracker.setValue(this.value); }
-                    this.dispatchEvent(event);
-                });
-            }
-        }
-    });
-}
-const observer = new window.parent.MutationObserver(bindInputs);
-observer.observe(doc.body, { childList: true, subtree: true });
-bindInputs();
-</script>
-""", height=0, width=0)
+
 
 # Üst limit
 UST_LIMIT = 1_000_000.0
